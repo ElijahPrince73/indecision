@@ -1,81 +1,67 @@
 'use strict';
 
-console.log('App.js is running!');
+// function square(x) {
+//   return x * x
+// }
 
-var app = {
-  title: 'Indecision App',
-  subTitle: 'Put your life in the hands of a computer',
-  options: ['One', 'Two', 'Three']
+//Prefered function
+// const squareArrow = (x) => {
+//   return x * x
+// }
 
-  // JSX - JavaScript XML
-};var template = React.createElement(
-  'div',
-  null,
-  React.createElement(
-    'h1',
-    null,
-    app.title
-  ),
-  app.subTitle && React.createElement(
-    'p',
-    null,
-    app.subTitle
-  ),
-  React.createElement(
-    'p',
-    null,
-    app.options.length > 0 ? "Here are your options" : "No options"
-  ),
-  React.createElement(
-    'ol',
-    null,
-    React.createElement(
-      'li',
-      null,
-      'item one'
-    ),
-    React.createElement(
-      'li',
-      null,
-      'item one'
-    )
-  )
-);
+//same as above without a return
+// const squareArrow = (x) => x * x
+//
+// console.log(squareArrow(8));
 
+// let fullName = 'Rob Stark'
+
+// const getFirstName = (fullName) => {
+//   if (fullName) {
+//     const firstName = fullName.split(' ')[0]
+//     console.log(firstName);
+//   }
+// }
+//
+// getFirstName(fullName)
+
+// const getFirstName = (fullName) => fullName ? console.log(fullName.split(' ')[0]) : undefined;;
+//
+// getFirstName(fullName)
+
+// Arrow Funtions 2
+
+// const add = (a, b) => {
+//   return a + b
+// }
+//
+// console.log(add(2, 3));
+
+// const user = {
+//   name: 'rob',
+//   cities: ['Las Vegas', 'Odessa', 'la belle'],
+//   printPlacesLived: function() {
+//     const that = this;
+//
+//     this.cities.forEach(function(city) {
+//       console.log(that.name + ' has lived in ' + city);
+//     })
+//   }
+// }
+//
+// user.printPlacesLived()
+
+//can use this
 var user = {
-  name: 'Eliah',
-  age: 20,
-  location: 'Las Vegas'
+  name: 'rob',
+  cities: ['Las Vegas', 'Odessa', 'la belle'],
+  printPlacesLived: function printPlacesLived() {
+    var _this = this;
+
+    this.cities.forEach(function (city) {
+      console.log(_this.name + ' has lived in ' + city);
+    });
+  }
 };
 
-function getLocation(location) {
-  if (location) {
-    return React.createElement(
-      'p',
-      null,
-      'location: ',
-      location
-    );
-  }
-}
-
-var templateTwo = React.createElement(
-  'div',
-  null,
-  React.createElement(
-    'h1',
-    null,
-    user.name ? user.name : 'Anonymouse'
-  ),
-  user.age && user.age >= 18 && React.createElement(
-    'p',
-    null,
-    'Age: ',
-    user.age
-  ),
-  getLocation(user.location)
-);
-
-var appRoot = document.getElementById('app');
-
-ReactDOM.render(template, appRoot);
+user.printPlacesLived();
