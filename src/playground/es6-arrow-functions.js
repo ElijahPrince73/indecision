@@ -50,14 +50,28 @@
  // user.printPlacesLived()
 
  //can use this
- const user = {
-   name: 'rob',
-   cities: ['Las Vegas', 'Odessa', 'la belle'],
-   printPlacesLived() {
-     this.cities.forEach((city) => {
-       console.log(this.name + ' has lived in ' + city);
-     })
+ // const user = {
+ //   name: 'rob',
+ //   cities: ['Las Vegas', 'Odessa', 'la belle'],
+ //   printPlacesLived() {
+ //
+ //     const cityMessages = this.cities.map((city) => {
+ //       return city
+ //     })
+ //     //  this.cities.forEach((city) => {
+ //     //    console.log(this.name + ' has lived in ' + city);
+ //     //  })
+ //     return cityMessages
+ //   }
+ // }
+
+ // console.log(user.printPlacesLived());
+
+ const multiplier = {
+   number: [2, 3, 4, 5, 6, 7],
+   muliplyBy: 15,
+   muliply() {
+     return this.number.map((numbers) => numbers * this.muliplyBy)
    }
  }
-
- user.printPlacesLived()
+ console.log(multiplier.muliply());

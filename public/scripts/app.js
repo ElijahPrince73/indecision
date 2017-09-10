@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // function square(x) {
 //   return x * x
@@ -52,16 +52,32 @@
 // user.printPlacesLived()
 
 //can use this
-var user = {
-  name: 'rob',
-  cities: ['Las Vegas', 'Odessa', 'la belle'],
-  printPlacesLived: function printPlacesLived() {
+// const user = {
+//   name: 'rob',
+//   cities: ['Las Vegas', 'Odessa', 'la belle'],
+//   printPlacesLived() {
+//
+//     const cityMessages = this.cities.map((city) => {
+//       return city
+//     })
+//     //  this.cities.forEach((city) => {
+//     //    console.log(this.name + ' has lived in ' + city);
+//     //  })
+//     return cityMessages
+//   }
+// }
+
+// console.log(user.printPlacesLived());
+
+var multiplier = {
+  number: [2, 3, 4, 5, 6, 7],
+  muliplyBy: 15,
+  muliply: function muliply() {
     var _this = this;
 
-    this.cities.forEach(function (city) {
-      console.log(_this.name + ' has lived in ' + city);
+    return this.number.map(function (numbers) {
+      return numbers * _this.muliplyBy;
     });
   }
 };
-
-user.printPlacesLived();
+console.log(multiplier.muliply());
