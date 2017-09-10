@@ -1,83 +1,91 @@
-"use strict";
+'use strict';
 
-// function square(x) {
-//   return x * x
-// }
+console.log('App.js is running!');
 
-//Prefered function
-// const squareArrow = (x) => {
-//   return x * x
-// }
+var app = {
+  title: 'Indecision App',
+  subTitle: 'Put your life in the hands of a computer',
+  options: ['One', 'Two', 'Three']
 
-//same as above without a return
-// const squareArrow = (x) => x * x
-//
-// console.log(squareArrow(8));
+  // JSX - JavaScript XML
+};var template = React.createElement(
+  'div',
+  null,
+  React.createElement(
+    'h1',
+    null,
+    app.title
+  ),
+  app.subTitle && React.createElement(
+    'p',
+    null,
+    app.subTitle
+  ),
+  React.createElement(
+    'p',
+    null,
+    app.options.length > 0 ? "Here are your options" : "No options"
+  ),
+  React.createElement(
+    'ol',
+    null,
+    React.createElement(
+      'li',
+      null,
+      'item one'
+    ),
+    React.createElement(
+      'li',
+      null,
+      'item one'
+    )
+  )
+);
 
-// let fullName = 'Rob Stark'
+var count = 0;
 
-// const getFirstName = (fullName) => {
-//   if (fullName) {
-//     const firstName = fullName.split(' ')[0]
-//     console.log(firstName);
-//   }
-// }
-//
-// getFirstName(fullName)
-
-// const getFirstName = (fullName) => fullName ? console.log(fullName.split(' ')[0]) : undefined;;
-//
-// getFirstName(fullName)
-
-// Arrow Funtions 2
-
-// const add = (a, b) => {
-//   return a + b
-// }
-//
-// console.log(add(2, 3));
-
-// const user = {
-//   name: 'rob',
-//   cities: ['Las Vegas', 'Odessa', 'la belle'],
-//   printPlacesLived: function() {
-//     const that = this;
-//
-//     this.cities.forEach(function(city) {
-//       console.log(that.name + ' has lived in ' + city);
-//     })
-//   }
-// }
-//
-// user.printPlacesLived()
-
-//can use this
-// const user = {
-//   name: 'rob',
-//   cities: ['Las Vegas', 'Odessa', 'la belle'],
-//   printPlacesLived() {
-//
-//     const cityMessages = this.cities.map((city) => {
-//       return city
-//     })
-//     //  this.cities.forEach((city) => {
-//     //    console.log(this.name + ' has lived in ' + city);
-//     //  })
-//     return cityMessages
-//   }
-// }
-
-// console.log(user.printPlacesLived());
-
-var multiplier = {
-  number: [2, 3, 4, 5, 6, 7],
-  muliplyBy: 15,
-  muliply: function muliply() {
-    var _this = this;
-
-    return this.number.map(function (numbers) {
-      return numbers * _this.muliplyBy;
-    });
-  }
+var addOne = function addOne() {
+  count++;
+  renderCoutnerApp();
 };
-console.log(multiplier.muliply());
+var minusOne = function minusOne() {
+  count--;
+  renderCoutnerApp();
+};
+var reset = function reset() {
+  count = 0;
+  renderCoutnerApp();
+};
+
+var appRoot = document.getElementById('app');
+
+var renderCoutnerApp = function renderCoutnerApp() {
+  var templateTwo = React.createElement(
+    'div',
+    null,
+    React.createElement(
+      'h1',
+      null,
+      'Count: ',
+      count
+    ),
+    React.createElement(
+      'button',
+      { onClick: addOne },
+      '+1'
+    ),
+    React.createElement(
+      'button',
+      { onClick: minusOne },
+      '-1'
+    ),
+    React.createElement(
+      'button',
+      { onClick: reset },
+      'reset'
+    )
+  );
+  ReactDOM.render(templateTwo, appRoot);
+};
+
+renderCoutnerApp();
