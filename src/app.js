@@ -1,10 +1,15 @@
 class IndecisionApp extends React.Component {
   render() {
+    const title = "Indecision";
+    const subTitle = 'Put your life in the hand of a computer';
+    const options = ['Thing One', 'Thing two', 'Thing three'];
+
     return (
       <div>
-        <Header/>
+        {/* The header Component is setting properties for the Header Component on line 17*/}
+        <Header title={title} subtitle={subTitle}/>
         <Action/>
-        <Options/>
+        <Options optionsList={options}/>
         <AddOption/>
       </div>
     )
@@ -13,10 +18,13 @@ class IndecisionApp extends React.Component {
 
 class Header extends React.Component {
   render() {
+    console.log(this.props);
     return (
       <div>
-        <h1>Indecision</h1>
-        <h2>Put your life in the hand of a computer</h2>
+        {/*This Component get these properties from the values passed in by IndecisionApp Component*/}
+
+        <h1>{this.props.title}</h1>
+        <h2>{this.props.subtitle}</h2>
       </div>
     )
   }
@@ -33,9 +41,12 @@ class Action extends React.Component{
 
 class Options extends React.Component{
   render() {
+    console.log(this.props);
     return (
       <div>
-        Option Components
+        {this.props.optionsList.map((option) => {
+          return <Option key={option} OptionText={option}/>
+        })}
       <Option/>
       </div>
     )
@@ -46,7 +57,7 @@ class Option extends React.Component {
   render() {
     return (
       <div>
-        Option Component inside of Options
+        <p>Option: {this.props.OptionText}</p>
       </div>
     )
   }
@@ -59,7 +70,5 @@ class AddOption extends React.Component{
     )
   }
 }
-
-
 
 ReactDOM.render(<IndecisionApp/>, document.getElementById('app'))

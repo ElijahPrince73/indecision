@@ -20,12 +20,16 @@ var IndecisionApp = function (_React$Component) {
   _createClass(IndecisionApp, [{
     key: 'render',
     value: function render() {
+      var title = "Indecision";
+      var subTitle = 'Put your life in the hand of a computer';
+      var options = ['Thing One', 'Thing two', 'Thing three'];
+
       return React.createElement(
         'div',
         null,
-        React.createElement(Header, null),
+        React.createElement(Header, { title: title, subtitle: subTitle }),
         React.createElement(Action, null),
-        React.createElement(Options, null),
+        React.createElement(Options, { optionsList: options }),
         React.createElement(AddOption, null)
       );
     }
@@ -46,18 +50,19 @@ var Header = function (_React$Component2) {
   _createClass(Header, [{
     key: 'render',
     value: function render() {
+      console.log(this.props);
       return React.createElement(
         'div',
         null,
         React.createElement(
           'h1',
           null,
-          'Indecision'
+          this.props.title
         ),
         React.createElement(
           'h2',
           null,
-          'Put your life in the hand of a computer'
+          this.props.subtitle
         )
       );
     }
@@ -105,10 +110,13 @@ var Options = function (_React$Component4) {
   _createClass(Options, [{
     key: 'render',
     value: function render() {
+      console.log(this.props);
       return React.createElement(
         'div',
         null,
-        'Option Components',
+        this.props.optionsList.map(function (option) {
+          return React.createElement(Option, { key: option, OptionText: option });
+        }),
         React.createElement(Option, null)
       );
     }
@@ -132,7 +140,12 @@ var Option = function (_React$Component5) {
       return React.createElement(
         'div',
         null,
-        'Option Component inside of Options'
+        React.createElement(
+          'p',
+          null,
+          'Option: ',
+          this.props.OptionText
+        )
       );
     }
   }]);
