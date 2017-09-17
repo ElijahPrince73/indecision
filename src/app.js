@@ -21,7 +21,6 @@ class Header extends React.Component {
     return (
       <div>
         {/*This Component get these properties from the values passed in by IndecisionApp Component*/}
-
         <h1>{this.props.title}</h1>
         <h2>{this.props.subtitle}</h2>
       </div>
