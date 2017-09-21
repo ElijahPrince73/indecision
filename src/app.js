@@ -9,6 +9,21 @@ class IndecisionApp extends React.Component {
       options: props.options
     };
   }
+  componentDidMount() {
+    const json = localStorage.getItem('options')
+    const options = JSON.parse(json)
+    console.log(options);
+  }
+  componentDidUpdate(prevState) {
+    if (prevState.options.length !== this.state.options.length) {
+      const json = JSON.stringify(this.state.options)
+      console.log(json);
+      localStorage.setItem('options', json)
+    }
+  }
+  componentWillUnmount() {
+    console.log('Component will unmount');
+  }
   handleDeleteOptions() {
     this.setState(() => ({
       options: []
@@ -20,13 +35,11 @@ class IndecisionApp extends React.Component {
       options: prevState.options.filter((option) => optionToRemove !== option)
     }))
   }
-
   handlePick() {
     const randomNum = Math.floor(Math.random() * this.state.options.length);
     const option = this.state.options[randomNum];
     alert(option);
   }
-
   handleAddOption(option) {
     if (!option) {
       return 'Enter valid value to add item';
@@ -106,7 +119,6 @@ const Options = (props) => {
 }
 
 const Option = (props) => {
-  console.log(props.optionText);
   return (
     <div>
       {props.optionText}

@@ -27,6 +27,27 @@ var IndecisionApp = function (_React$Component) {
   }
 
   _createClass(IndecisionApp, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var json = localStorage.getItem('options');
+      var options = JSON.parse(json);
+      console.log(options);
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate(prevState) {
+      if (prevState.options.length !== this.state.options.length) {
+        var json = JSON.stringify(this.state.options);
+        console.log(json);
+        localStorage.setItem('options', json);
+      }
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      console.log('Component will unmount');
+    }
+  }, {
     key: 'handleDeleteOptions',
     value: function handleDeleteOptions() {
       this.setState(function () {
@@ -155,7 +176,6 @@ var Options = function Options(props) {
 };
 
 var Option = function Option(props) {
-  console.log(props.optionText);
   return React.createElement(
     'div',
     null,
