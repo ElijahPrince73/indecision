@@ -1,15 +1,8 @@
-//Imports the entire file but not its functions or variables
-// import './utils';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import validator from 'validator';
 
-//imports one or more functions or variable
-// import subtrack, {square, add} from './utils';
-//
-// console.log('App.js is running!!!');
-// console.log(square(4))
-// console.log(add(4, 5))
-// console.log(subtrack(100, 10));
+console.log(validator.isEmail('test@gmail.com'))
 
-import isSenoir, {isAdult, canDrink} from './person';
-console.log(isAdult(21));
-console.log(canDrink(18));
-console.log(isSenoir(68));
+const template = React.createElement('p', {}, 'testing')
+ReactDOM.render(template, document.getElementById('app'))
