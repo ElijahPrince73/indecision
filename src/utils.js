@@ -1,8 +1,16 @@
 console.log("utils.js is running");
-
+//Prefered
 //This works the same as the below export
-export const add = (a, b) => a + b
-export const square = (x) => x * x
+const add = (a, b) => a + b
+const square = (x) => x * x
+const subtrack = (a, b) => a - b
+//Can just use this one to export certain functions or just one and put in a default
+// export {square, add, subtrack as default};
 
-//Can just use this one to export certain functions or just one
-// export {square, add};
+export {square, add};
+//We can also export like the below function
+// export const subtrack = (a, b) => a - b
+
+//Another way to export a default]
+
+export default subtrack

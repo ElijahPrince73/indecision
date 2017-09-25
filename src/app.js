@@ -2,13 +2,14 @@
 // import './utils';
 
 //imports one or more functions or variable
-// import {square, add} from './utils';
+// import subtrack, {square, add} from './utils';
 //
 // console.log('App.js is running!!!');
-//
 // console.log(square(4))
-// console.log(add(4,5))
-import {isAdult, canDrink} from './person';
+// console.log(add(4, 5))
+// console.log(subtrack(100, 10));
 
+import isSenoir, {isAdult, canDrink} from './person';
 console.log(isAdult(21));
 console.log(canDrink(18));
+console.log(isSenoir(68));
