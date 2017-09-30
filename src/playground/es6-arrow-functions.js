@@ -1,71 +1,71 @@
- // function square(x) {
- //   return x * x
- // }
+ function square(x) {
+   return x * x
+ }
 
- //Prefered function
- // const squareArrow = (x) => {
- //   return x * x
- // }
+ Prefered function
+ const squareArrow = (x) => {
+   return x * x
+ }
 
- //same as above without a return
- // const squareArrow = (x) => x * x
- //
- // console.log(squareArrow(8));
+ same as above without a return
+ const squareArrow = (x) => x * x
 
- // let fullName = 'Rob Stark'
+ console.log(squareArrow(8));
 
- // const getFirstName = (fullName) => {
- //   if (fullName) {
- //     const firstName = fullName.split(' ')[0]
- //     console.log(firstName);
- //   }
- // }
- //
- // getFirstName(fullName)
+ let fullName = 'Rob Stark'
 
- // const getFirstName = (fullName) => fullName ? console.log(fullName.split(' ')[0]) : undefined;;
- //
- // getFirstName(fullName)
+ const getFirstName = (fullName) => {
+   if (fullName) {
+     const firstName = fullName.split(' ')[0]
+     console.log(firstName);
+   }
+ }
 
- // Arrow Funtions 2
+ getFirstName(fullName)
 
- // const add = (a, b) => {
- //   return a + b
- // }
- //
- // console.log(add(2, 3));
+ const getFirstName = (fullName) => fullName ? console.log(fullName.split(' ')[0]) : undefined;;
 
- // const user = {
- //   name: 'rob',
- //   cities: ['Las Vegas', 'Odessa', 'la belle'],
- //   printPlacesLived: function() {
- //     const that = this;
- //
- //     this.cities.forEach(function(city) {
- //       console.log(that.name + ' has lived in ' + city);
- //     })
- //   }
- // }
- //
- // user.printPlacesLived()
+ getFirstName(fullName)
 
- //can use this
- // const user = {
- //   name: 'rob',
- //   cities: ['Las Vegas', 'Odessa', 'la belle'],
- //   printPlacesLived() {
- //
- //     const cityMessages = this.cities.map((city) => {
- //       return city
- //     })
- //     //  this.cities.forEach((city) => {
- //     //    console.log(this.name + ' has lived in ' + city);
- //     //  })
- //     return cityMessages
- //   }
- // }
+ Arrow Funtions 2
 
- // console.log(user.printPlacesLived());
+ const add = (a, b) => {
+   return a + b
+ }
+
+ console.log(add(2, 3));
+
+ const user = {
+   name: 'rob',
+   cities: ['Las Vegas', 'Odessa', 'la belle'],
+   printPlacesLived: function() {
+     const that = this;
+
+     this.cities.forEach(function(city) {
+       console.log(that.name + ' has lived in ' + city);
+     })
+   }
+ }
+
+ user.printPlacesLived()
+
+ can use this
+ const user = {
+   name: 'rob',
+   cities: ['Las Vegas', 'Odessa', 'la belle'],
+   printPlacesLived() {
+
+     const cityMessages = this.cities.map((city) => {
+       return city
+     })
+     //  this.cities.forEach((city) => {
+     //    console.log(this.name + ' has lived in ' + city);
+     //  })
+     return cityMessages
+   }
+ }
+
+ console.log(user.printPlacesLived());
 
  const multiplier = {
    number: [2, 3, 4, 5, 6, 7],
